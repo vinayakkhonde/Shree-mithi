@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0D0B0A">
+<title>Shree Mithai & Rasoi | Royal Taste of Sendhwa</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+ theme: {
+  extend: {
+   colors: {
+    obsidian:'#0D0B0A',
+    maroon:'#8B1E1E',
+    crimson:'#A62626',
+    gold:'#D4AF37',
+    cream:'#F5EFE6'
+   },
+   fontFamily: {
+    serif:['Cormorant Garamond','serif'],
+    sans:['Plus Jakarta Sans','sans-serif']
+   }
+  }
+ }
+}
+</script>
+
+<style>
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+ background:#0D0B0A;
+ color:#F5EFE6;
+ font-family:'Plus Jakarta Sans',sans-serif;
+}
+.serif {font-family:'Cormorant Garamond',serif}
+.gold-line {height:1px;background:linear-gradient(90deg,transparent,#D4AF37,transparent)}
+.glass {
+ background:rgba(18,14,12,.86);
+ backdrop-filter:blur(18px);
+ -webkit-backdrop-filter:blur(18px);
+}
+.hero-overlay {
+ background:linear-gradient(90deg,#0D0B0A 0%,rgba(13,11,10,.92) 30%,rgba(13,11,10,.25) 100%);
+}
+.food-card {
+ border:1px solid rgba(212,175,55,.15);
+ transition:all .35s ease;
+}
+.food-card:hover {
+ border-color:rgba(212,175,55,.65);
+ transform:translateY(-5px);
+}
+.food-card img {transition:transform .6s ease}
+.food-card:hover img {transform:scale(1.06)}
+.gold-text {color:#D4AF37}
+.category.active {
+ background:#8B1E1E;
+ color:#fff;
+ border-color:#A62626;
+}
+.menu-row {border-bottom:1px solid rgba(212,175,55,.15)}
+button {touch-action:manipulation}
+#cartBar {
+ transform:translateY(150%);
+ transition:transform .4s ease;
+}
+#cartBar.visible {transform:translateY(0)}
+::-webkit-scrollbar {width:6px}
+::-webkit-scrollbar-thumb {background:#8B1E1E;border-radius:10px}
+::selection {background:#8B1E1E;color:white}
+</style>
+</head>
+
+<body class="overflow-x-hidden">
+
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full z-50 glass border-b border-white/10">
+ <div class="max-w-7xl mx-auto px-5 md:px-10 h-20 flex items-center justify-between">
+  <a href="#" class="leading-tight">
+   <div class="serif text-2xl md:text-3xl font-bold gold-text">Shree Mithai</div>
+   <div class="text-[9px] tracking-[4px] uppercase text-cream/60">& Rasoi · Sendhwa</div>
+  </a>
+
+  <nav class="hidden md:flex gap-9 text-xs tracking-widest uppercase text-cream/75">
+   <a href="#home" class="hover:text-gold">Home</a>
+   <a href="#signature" class="hover:text-gold">Our Specials</a>
+   <a href="#menu" class="hover:text-gold">Menu</a>
+   <a href="#heritage" class="hover:text-gold">Our Story</a>
+  </nav>
+
+  <a href="#menu" class="bg-maroon hover:bg-crimson border border-gold/30 px-5 py-3 rounded-full text-[10px] tracking-widest uppercase font-bold transition">
+   Order Now ↗
+  </a>
+ </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="relative min-h-[720px] md:min-h-[790px] flex items-center pt-24 overflow-hidden">
+ <div class="absolute inset-0">
+  <img src="https://images.unsplash.com/photo-1605197161470-5d2f4c5f4f9c?w=1200&q=85"
+   onerror="this.src='https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&q=85'"
+   class="w-full h-full object-cover opacity-65" alt="Indian sweets and delicacies">
+  <div class="absolute inset-0 hero-overlay"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/20"></div>
+ </div>
+
+ <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
+  <div class="max-w-2xl">
+   <div class="flex items-center gap-3 mb-7">
+    <span class="gold-line w-12"></span>
+    <span class="text-gold uppercase tracking-[4px] text-[10px]">A Taste of Royal India</span>
+   </div>
+
+   <h1 class="serif text-6xl sm:text-7xl md:text-8xl leading-[.91] font-semibold mb-7">
+    The Original Taste of
+    <span class="gold-text italic">Royal Tradition.</span>
+   </h1>
+
+   <p class="text-cream/70 text-sm md:text-base leading-8 max-w-md mb-8">
+    From the first bite of our handcrafted mithai to the warmth of a freshly prepared meal, discover flavours made with love and heritage.
+   </p>
+
+   <div class="flex items-center gap-3 mb-9">
+    <span class="text-gold text-lg">★★★★★</span>
+    <span class="font-bold text-sm">4.9/5</span>
+    <span class="text-cream/50 text-xs">A tradition worth celebrating</span>
+   </div>
+
+   <div class="flex flex-wrap gap-4">
+    <a href="#menu" class="bg-maroon hover:bg-crimson px-8 py-4 text-xs tracking-widest uppercase font-bold transition">
+     Order Now →
+    </a>
+    <a href="#signature" class="border border-gold/60 hover:bg-gold hover:text-obsidian px-8 py-4 text-xs tracking-widest uppercase transition">
+     Explore Menu
+    </a>
+   </div>
+
+   <div class="mt-14 flex items-center gap-4 text-[10px] uppercase tracking-[3px] text-cream/50">
+    <span class="gold-text">✦</span> Crafted Fresh in Sendhwa, Madhya Pradesh
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- SIGNATURE -->
+<section id="signature" class="py-24 px-5 md:px-10 max-w-7xl mx-auto">
+ <div class="text-center mb-14">
+  <p class="text-gold text-[10px] tracking-[5px] uppercase mb-4">Made with Love & Tradition</p>
+  <h2 class="serif text-5xl md:text-6xl">Signature <span class="gold-text italic">Creations</span></h2>
+  <p class="text-cream/50 text-xs mt-4">A little indulgence. A lasting memory.</p>
+ </div>
+
+ <div id="signatureGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+</section>
+
+<div class="gold-line max-w-6xl mx-auto"></div>
+
+<!-- MENU -->
+<section id="menu" class="py-24 px-5 md:px-10 max-w-7xl mx-auto">
+ <div class="text-center mb-12">
+  <p class="text-gold text-[10px] tracking-[5px] uppercase mb-4">The Art of Good Food</p>
+  <h2 class="serif text-5xl md:text-6xl">Comfort in Every <span class="gold-text italic">Bite</span></h2>
+  <p class="text-cream/50 text-xs mt-4">Explore our collection of beloved Indian flavours.</p>
+ </div>
+
+ <div id="categories" class="flex gap-3 overflow-x-auto pb-5 justify-start md:justify-center mb-10">
+  <button class="category active whitespace-nowrap border border-gold/30 rounded-full px-6 py-3 text-xs" data-category="All">All</button>
+  <button class="category whitespace-nowrap border border-gold/30 rounded-full px-6 py-3 text-xs" data-category="Signature Mithai">Signature Mithai</button>
+  <button class="category whitespace-nowrap border border-gold/30 rounded-full px-6 py-3 text-xs" data-category="Royal Chaats">Royal Chaats</button>
+  <button class="category whitespace-nowrap border border-gold/30 rounded-full px-6 py-3 text-xs" data-category="Kulhad Beverages">Kulhad Beverages</button>
+  <button class="category whitespace-nowrap border border-gold/30 rounded-full px-6 py-3 text-xs" data-category="Gift Boxes">Gift Boxes</button>
+ </div>
+
+ <div id="menuGrid" class="grid md:grid-cols-2 gap-x-12"></div>
+</section>
+
+<!-- HERITAGE STRIP -->
+<section id="heritage" class="relative py-24 px-6 overflow-hidden">
+ <div class="absolute inset-0 bg-maroon/30"></div>
+ <div class="absolute inset-0 opacity-20" style="background-image:radial-gradient(#D4AF37 1px,transparent 1px);background-size:22px 22px"></div>
+
+ <div class="relative max-w-5xl mx-auto text-center">
+  <p class="text-gold uppercase tracking-[5px] text-[10px] mb-5">Our Promise to You</p>
+  <h2 class="serif text-5xl md:text-7xl leading-tight mb-6">
+   Freshly Crafted Every Morning.
+  </h2>
+  <p class="text-cream/75 text-sm md:text-base mb-9">
+   Pre-Order for Pickup & Delivery. Let something delicious find its way to you.
+  </p>
+
+  <div class="flex flex-wrap justify-center gap-4">
+   <a href="tel:+917247448775" class="bg-cream text-obsidian px-8 py-4 text-xs tracking-widest uppercase font-bold hover:bg-gold transition">
+    ☎ Call Us
+   </a>
+   <a href="https://wa.me/917247448775" target="_blank" rel="noopener" class="border border-gold text-cream px-8 py-4 text-xs tracking-widest uppercase hover:bg-maroon transition">
+    WhatsApp Us ↗
+   </a>
+  </div>
+ </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#080706] pt-16 pb-28 px-6">
+ <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+  <div>
+   <h3 class="serif text-3xl gold-text">Shree Mithai & Rasoi</h3>
+   <p class="text-cream/40 text-xs mt-4 leading-7">
+    Bringing generations together through the timeless flavours of Indian sweets, snacks and hospitality.
+   </p>
+  </div>
+
+  <div>
+   <h4 class="text-gold uppercase tracking-widest text-xs mb-5">Explore</h4>
+   <div class="flex flex-col gap-3 text-xs text-cream/50">
+    <a href="#home" class="hover:text-gold">Home</a>
+    <a href="#signature" class="hover:text-gold">Our Specials</a>
+    <a href="#menu" class="hover:text-gold">Food Menu</a>
+   </div>
+  </div>
+
+  <div>
+   <h4 class="text-gold uppercase tracking-widest text-xs mb-5">Visit & Connect</h4>
+   <p class="text-xs text-cream/50 leading-7">Sendhwa, Madhya Pradesh, India</p>
+   <a href="tel:+917247448775" class="text-xs text-cream/70 hover:text-gold block mt-2">+91 72474 48775</a>
+   <a href="https://wa.me/917247448775" class="text-xs text-cream/70 hover:text-gold block mt-2">WhatsApp Ordering</a>
+  </div>
+ </div>
+
+ <div class="gold-line max-w-7xl mx-auto my-10"></div>
+ <p class="text-center text-[10px] tracking-widest text-cream/30">© 2026 SHREE MITHAI & RASOI · MADE WITH TRADITION</p>
+</footer>
+
+<!-- FLOATING CART -->
+<div id="cartBar" class="fixed bottom-3 left-3 right-3 z-[60] glass border border-gold/40 rounded-2xl p-4 shadow-2xl">
+ <div class="max-w-5xl mx-auto flex items-center justify-between gap-3">
+  <div class="min-w-0">
+   <p class="text-[10px] text-gold uppercase tracking-widest">Your Selection</p>
+   <p class="text-sm font-bold mt-1"><span id="cartCount">0</span> Items <span class="text-cream/40 mx-1">·</span> ₹<span id="cartTotal">0</span></p>
+  </div>
+  <button onclick="checkout()" class="bg-[#167A45] hover:bg-[#116438] text-white rounded-xl px-5 py-4 text-xs font-bold whitespace-nowrap transition">
+   Order on WhatsApp ↗
+  </button>
+ </div>
+</div>
+
+<script>
+const PHONE = "917247448775";
+
+const products = [
+ {
+  id:1,name:"Royal Kaju Katli",category:"Signature Mithai",price:450,
+  desc:"Silky cashew perfection with a delicate touch of silver.",
+  image:"https://images.unsplash.com/photo-1601303516534-8e7c9b4c5b85?w=500&q=80"
+ },
+ {
+  id:2,name:"Desi Ghee Motichoor Ladoo",category:"Signature Mithai",price:320,
+  desc:"Golden pearls of sweetness, rich in pure desi ghee.",
+  image:"https://images.unsplash.com/photo-1605197161470-5d2f4c5f4f9c?w=500&q=80"
+ },
+ {
+  id:3,name:"Royal Rasmalai",category:"Signature Mithai",price:180,
+  desc:"Soft cottage cheese dumplings in fragrant saffron milk.",
+  image:"https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=500&q=80"
+ },
+ {
+  id:4,name:"Festive Sweet Box",category:"Gift Boxes",price:799,
+  desc:"A beautiful assortment for your special celebrations.",
+  image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&q=80"
+ },
+ {
+  id:5,name:"Raj Kachori",category:"Royal Chaats",price:120,
+  desc:"Crispy, colourful and filled with tangy goodness.",
+  image:"https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=500&q=80"
+ },
+ {
+  id:6,name:"Dahi Puri",category:"Royal Chaats",price:90,
+  desc:"Crisp puris with creamy yoghurt and chutneys.",
+  image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&q=80"
+ },
+ {
+  id:7,name:"Masala Kulhad Chai",category:"Kulhad Beverages",price:35,
+  desc:"Slow-brewed tea with warming Indian spices.",
+  image:"https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=500&q=80"
+ },
+ {
+  id:8,name:"Kesar Badam Milk",category:"Kulhad Beverages",price:80,
+  desc:"A comforting blend of saffron, almonds and milk.",
+  image:"https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500&q=80"
+ }
+];
+
+const signatureIds = [1,2,3,5];
+const cart = {};
+
+function money(value) {
+ return Number(value).toLocaleString("en-IN");
+}
+
+function getProduct(id) {
+ return products.find(p => p.id === Number(id));
+}
+
+function quantity(id) {
+ return cart[id] || 0;
+}
+
+function changeQty(id, amount) {
+ id = Number(id);
+ cart[id] = Math.max(0, quantity(id) + amount);
+ if (cart[id] === 0) delete cart[id];
+ render();
+}
+
+function quantityControl(product) {
+ const qty = quantity(product.id);
+ if (!qty) {
+  return `<button onclick="changeQty(${product.id},1)" class="bg-maroon hover:bg-crimson px-5 py-2 rounded-full text-xs font-bold transition">+ Add</button>`;
+ }
+ return `
+  <div class="flex items-center gap-3 border border-gold/40 rounded-full px-3 py-1">
+   <button onclick="changeQty(${product.id},-1)" class="text-gold text-lg w-6">−</button>
+   <span class="text-sm font-bold">${qty}</span>
+   <button onclick="changeQty(${product.id},1)" class="text-gold text-lg w-6">+</button>
+  </div>`;
+}
+
+function signatureCard(p) {
+ return `
+ <article class="food-card rounded-xl overflow-hidden bg-[#15110F]">
+  <div class="h-56 overflow-hidden relative">
+   <img src="${p.image}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover">
+   <div class="absolute top-3 left-3 bg-obsidian/80 text-gold text-[9px] tracking-widest px-3 py-2 uppercase">House Favourite</div>
+  </div>
+  <div class="p-5">
+   <p class="text-[9px] text-gold uppercase tracking-widest">${p.category}</p>
+   <h3 class="serif text-2xl mt-2">${p.name}</h3>
+   <p class="text-[11px] text-cream/50 leading-5 min-h-10 mt-2">${p.desc}</p>
+   <div class="flex items-center justify-between mt-5 gap-2">
+    <span class="font-bold text-sm">₹${money(p.price)}</span>
+    ${quantityControl(p)}
+   </div>
+  </div>
+ </article>`;
+}
+
+function menuItem(p) {
+ return `
+ <article class="menu-row py-6 flex items-center justify-between gap-4">
+  <div class="min-w-0">
+   <h3 class="serif text-2xl">${p.name}</h3>
+   <p class="text-[10px] text-cream/45 mt-2 leading-5 max-w-sm">${p.desc}</p>
+   <p class="text-sm font-bold gold-text mt-3">₹${money(p.price)}</p>
+  </div>
+  <div class="shrink-0">${quantityControl(p)}</div>
+ </article>`;
+}
+
+let activeCategory = "All";
+
+function renderMenu() {
+ const filtered = activeCategory === "All"
+  ? products
+  : products.filter(p => p.category === activeCategory);
+
+ document.getElementById("menuGrid").innerHTML =
+  filtered.map(menuItem).join("");
+}
+
+function render() {
+ document.getElementById("signatureGrid").innerHTML =
+  signatureIds.map(id => signatureCard(getProduct(id))).join("");
+
+ renderMenu();
+
+ const count = Object.values(cart).reduce((a,b) => a+b,0);
+ const total = Object.entries(cart).reduce((sum,[id,qty]) =>
+  sum + getProduct(id).price * qty,0);
+
+ document.getElementById("cartCount").textContent = count;
+ document.getElementById("cartTotal").textContent = money(total);
+
+ document.getElementById("cartBar").classList.toggle("visible",count > 0);
+}
+
+document.querySelectorAll(".category").forEach(button => {
+ button.addEventListener("click",() => {
+  document.querySelectorAll(".category").forEach(b => b.classList.remove("active"));
+  button.classList.add("active");
+  activeCategory = button.dataset.category;
+  renderMenu();
+ });
+});
+
+function checkout() {
+ const entries = Object.entries(cart);
+ if (!entries.length) return;
+
+ let total = 0;
+ let receipt = "Namaste! I would like to place an order from Shree Mithai & Rasoi.\\n\\n";
+ receipt += "MY ORDER\\n";
+ receipt += "--------------------------\\n";
+
+ entries.forEach(([id,qty]) => {
+  const p = getProduct(id);
+  const amount = p.price * qty;
+  total += amount;
+  receipt += `${p.name} x ${qty} = Rs. ${money(amount)}\\n`;
+ });
+
+ receipt += "--------------------------\\n";
+ receipt += `Total: Rs. ${money(total)}\\n\\n`;
+ receipt += "Please confirm availability and pickup/delivery details. Thank you!";
+
+ const url = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(receipt);
+ window.open(url,"_blank","noopener");
+}
+
+render();
+</script>
+
+</body>
+</html>
