@@ -1,428 +1,912 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-IN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0D0B0A">
-<title>Shree Mithai & Rasoi | Royal Taste of Sendhwa</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shree Mithai &amp; Rasoi | Heritage Sweets &amp; Cafe, Sendhwa</title>
+<meta name="description" content="Pure desi ghee mithai, royal chaats and kulhad chai, crafted fresh every morning in Sendhwa, M.P. Order directly on WhatsApp or Instagram.">
+<meta name="theme-color" content="#FBF8F3">
+<meta property="og:title" content="Shree Mithai &amp; Rasoi — Sendhwa">
+<meta property="og:description" content="Freshly packed on order. Order pure desi ghee mithai, chaat &amp; kulhad chai on WhatsApp or Instagram.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%236E141A'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23D4AF37' stroke-width='2.5'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='24' fill='%23FBF8F3' font-family='serif'%3E%E0%A4%B6%E0%A5%8D%E0%A4%B0%E0%A5%80%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <script>
-tailwind.config = {
- theme: {
-  extend: {
-   colors: {
-    obsidian:'#0D0B0A',
-    maroon:'#8B1E1E',
-    crimson:'#A62626',
-    gold:'#D4AF37',
-    cream:'#F5EFE6'
-   },
-   fontFamily: {
-    serif:['Cormorant Garamond','serif'],
-    sans:['Plus Jakarta Sans','sans-serif']
-   }
-  }
- }
-}
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ivory: '#FBF8F3',
+          silk: '#F4EDE2',
+          card: '#FFFFFF',
+          maroon: '#6E141A',
+          crimson: '#8E1B22',
+          gold: '#C59B27',
+          goldlight: '#E8D59E',
+          ink: '#231715',
+          muted: '#6B5B56'
+        },
+        fontFamily: {
+          serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif']
+        }
+      }
+    }
+  };
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Shree Mithai & Rasoi","servesCuisine":["Indian","Mithai","Street food"],"telephone":"+91-7247448775","address":{"@type":"PostalAddress","addressLocality":"Sendhwa","addressRegion":"Madhya Pradesh","postalCode":"451666","addressCountry":"IN"},"openingHours":"Mo-Su 07:00-22:30"}
 </script>
 
 <style>
-* {box-sizing:border-box}
-html {scroll-behavior:smooth}
-body {
- background:#0D0B0A;
- color:#F5EFE6;
- font-family:'Plus Jakarta Sans',sans-serif;
-}
-.serif {font-family:'Cormorant Garamond',serif}
-.gold-line {height:1px;background:linear-gradient(90deg,transparent,#D4AF37,transparent)}
-.glass {
- background:rgba(18,14,12,.86);
- backdrop-filter:blur(18px);
- -webkit-backdrop-filter:blur(18px);
-}
-.hero-overlay {
- background:linear-gradient(90deg,#0D0B0A 0%,rgba(13,11,10,.92) 30%,rgba(13,11,10,.25) 100%);
-}
-.food-card {
- border:1px solid rgba(212,175,55,.15);
- transition:all .35s ease;
-}
-.food-card:hover {
- border-color:rgba(212,175,55,.65);
- transform:translateY(-5px);
-}
-.food-card img {transition:transform .6s ease}
-.food-card:hover img {transform:scale(1.06)}
-.gold-text {color:#D4AF37}
-.category.active {
- background:#8B1E1E;
- color:#fff;
- border-color:#A62626;
-}
-.menu-row {border-bottom:1px solid rgba(212,175,55,.15)}
-button {touch-action:manipulation}
-#cartBar {
- transform:translateY(150%);
- transition:transform .4s ease;
-}
-#cartBar.visible {transform:translateY(0)}
-::-webkit-scrollbar {width:6px}
-::-webkit-scrollbar-thumb {background:#8B1E1E;border-radius:10px}
-::selection {background:#8B1E1E;color:white}
+  :root{
+    --ivory:#FBF8F3; --silk:#F4EDE2; --card:#FFFFFF;
+    --maroon:#6E141A; --crimson:#8E1B22; --gold:#C59B27;
+    --ink:#231715; --muted:#6B5B56;
+    --ease:cubic-bezier(.22,.8,.24,1);
+  html{scroll-behavior:smooth;scroll-padding-top:80px;background:var(--ivory);-webkit-text-size-adjust:100%;overflow-x:clip}
+  body{background:var(--ivory);color:var(--ink);min-height:100vh;overflow-x:hidden;
+ -webkit-tap-highlight-color:transparent;text-rendering:optimizeLegibility}
+  [hidden]{display:none!important}
+  ::selection{background:var(--maroon);color:#fff}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:10px}
+  button,a{touch-action:manipulation}
+  .no-scrollbar{scrollbar-width:none}
+  .no-scrollbar::-webkit-scrollbar{display:none}
+
+  /* Typography */
+  .display{font-size:clamp(2.5rem,10vw,4.3rem);line-height:1.05;letter-spacing:-.02em;font-weight:700}
+  .h2{font-size:clamp(2rem,6.5vw,3.1rem);line-height:1.1;letter-spacing:-.015em;font-weight:700}
+  .kicker{font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--maroon)}
+
+  /* Glass Header */
+  .glass{background:rgba(251,248,243,.86);-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%)}
+  @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+    .glass,.cartbar{background:rgba(251,248,243,.97)!important}
+  }
+  .site-header{border-bottom:1px solid rgba(197,155,39,.25)}
+
+  /* Logo Mark */
+  .mark{display:grid;place-items:center;width:40px;height:40px;border-radius:14px;background:linear-gradient(145deg,#7D181F,#560E13);border:1.5px solid var(--gold);color:#FBF8F3;font-size:1.1rem;font-weight:700;font-family:'Playfair Display',serif;box-shadow:0 6px 16px -6px rgba(110,20,26,.45)}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:50px;padding:0 1.45rem;border-radius:999px;font-weight:700;font-size:.92rem;letter-spacing:.01em;transition:transform .2s var(--ease),box-shadow .25s,background-color .25s,border-color .25s;cursor:pointer;white-space:normal;text-align:center}
+
+  .btn:active{transform:scale(.97)}
+  .btn-maroon{color:#fff;background:linear-gradient(180deg,#871A21 0%,#6E141A 100%);box-shadow:0 10px 24px -10px rgba(110,20,26,.6)}
+  .btn-wa{color:#fff;background:linear-gradient(180deg,#22B55B 0%,#199549 100%);box-shadow:0 10px 24px -10px rgba(25,149,73,.55)}
+  .btn-insta{color:var(--maroon);background:#fff;border:1.5px solid rgba(110,20,26,.25);box-shadow:0 6px 18px -8px rgba(35,23,21,.12)}
+  .btn-outline{color:var(--ink);background:transparent;border:1.5px solid rgba(35,23,21,.2)}
+  @media (hover:hover){
+    .btn-maroon:hover{transform:translateY(-1px);box-shadow:0 14px 28px -8px rgba(110,20,26,.7)}
+    .btn-wa:hover{transform:translateY(-1px);box-shadow:0 14px 28px -8px rgba(25,149,73,.65)}
+    .btn-insta:hover{border-color:var(--maroon);background:var(--silk)}
+    .btn-outline:hover{border-color:var(--maroon);color:var(--maroon)}
+  }
+
+  /* Hero */
+  .hero-bg{background:
+      radial-gradient(55% 50% at 88% 25%,rgba(197,155,39,.14) 0%,transparent 70%),
+      radial-gradient(45% 45% at 8% 12%,rgba(110,20,26,.06) 0%,transparent 70%),
+      var(--ivory)}
+  .arch-wrap{position:relative;width:100%;max-width:390px;margin-inline:auto}
+  .arch-wrap::before{content:"";position:absolute;inset:-10px;border:1.5px solid rgba(197,155,39,.55);border-radius:200px 200px 24px 24px;pointer-events:none}
+  .arch{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:190px 190px 18px 18px;background:var(--silk);box-shadow:0 24px 50px -20px rgba(35,23,21,.22)}
+  .chip{background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(197,155,39,.4);border-radius:18px;box-shadow:0 14px 30px -12px rgba(35,23,21,.15)}
+
+  /* Order Notice Box */
+  .order-callout{background:linear-gradient(135deg,#FFFFFF 0%,#F7EFE2 100%);border:1.5px solid rgba(197,155,39,.45);border-radius:20px;box-shadow:0 12px 30px -16px rgba(110,20,26,.18)}
+
+  /* Load animation */
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .rise{opacity:0;animation:rise .75s var(--ease) forwards;animation-delay:var(--d,0s)}
+
+  /* Signature Cards */
+  .sig-card{position:relative;border-radius:24px;padding:.75rem;background:var(--card);border:1px solid rgba(197,155,39,.28);box-shadow:0 10px 28px -16px rgba(35,23,21,.12);transition:box-shadow .3s var(--ease),border-color .3s,transform .3s var(--ease)}
+  .sig-card .arch{border-radius:150px 150px 14px 14px;box-shadow:none}
+  .sig-card img{transition:transform .7s var(--ease)}
+  @media (hover:hover){
+    .sig-card:hover{border-color:var(--gold);box-shadow:0 20px 40px -18px rgba(110,20,26,.22);transform:translateY(-3px)}
+    .sig-card:hover img{transform:scale(1.06)}
+  }
+
+  /* Add & Stepper */
+  .ctl .stepper{display:none}
+  .ctl[data-q]:not([data-q="0"]) .add-btn{display:none}
+  .ctl[data-q]:not([data-q="0"]) .stepper{display:flex}
+  .add-btn{width:100%;min-height:44px;border-radius:999px;border:1.5px solid var(--maroon);color:var(--maroon);background:transparent;font-weight:700;font-size:.88rem;display:flex;align-items:center;justify-content:center;gap:.35rem;transition:background-color .2s,color .2s,transform .15s}
+  .add-btn:active{transform:scale(.97)}
+  @media (hover:hover){.add-btn:hover{background:var(--maroon);color:#fff}}
+  .stepper{align-items:center;justify-content:space-between;min-height:44px;border-radius:999px;background:var(--maroon);color:#fff;box-shadow:0 8px 20px -10px rgba(110,20,26,.65)}
+  .stepper button{width:44px;height:44px;display:grid;place-items:center;font-size:1.3rem;line-height:1;color:#fff;border-radius:999px}
+  .stepper button:active{background:rgba(0,0,0,.2)}
+  .stepper .qty{font-weight:700;min-width:1.4rem;text-align:center;font-variant-numeric:tabular-nums}
+
+  /* Menu Section */
+  .pill{flex:none;min-height:42px;padding:0 1.15rem;border-radius:999px;border:1px solid rgba(110,20,26,.2);background:#fff;color:var(--ink);font-weight:600;font-size:.86rem;white-space:nowrap;transition:all .22s}
+  .pill[aria-pressed="true"]{background:var(--maroon);border-color:var(--maroon);color:#fff;box-shadow:0 8px 20px -10px rgba(110,20,26,.6)}
+  @media (hover:hover){.pill[aria-pressed="false"]:hover{border-color:var(--maroon);color:var(--maroon)}}
+  .row{display:flex;align-items:center;gap:.9rem;padding:.9rem;border-radius:20px;background:#fff;border:1px solid rgba(197,155,39,.24);box-shadow:0 8px 22px -16px rgba(35,23,21,.1);transition:opacity .16s ease,transform .16s ease,border-color .25s,box-shadow .25s}
+  .row.is-out{opacity:0;transform:translateY(6px) scale(.985)}
+  @media (hover:hover){.row:hover{border-color:var(--gold);box-shadow:0 14px 28px -16px rgba(110,20,26,.2)}}
+  .thumb{flex:none;width:66px;height:66px;border-radius:16px;overflow:hidden;border:1px solid rgba(197,155,39,.35);background:var(--silk);position:relative}
+  .order-btn{position:relative;min-height:42px;padding:0 1rem;border-radius:999px;color:#fff;font-weight:700;font-size:.84rem;background:var(--maroon);box-shadow:0 8px 18px -10px rgba(110,20,26,.65);transition:transform .15s,background-color .2s;white-space:nowrap}
+  .order-btn:active{transform:scale(.95)}
+  @media (hover:hover){.order-btn:hover{background:var(--crimson)}}
+  .order-btn .badge{position:absolute;top:-7px;right:-4px;min-width:21px;height:21px;padding:0 5px;border-radius:999px;background:var(--gold);color:#231715;font-size:.72rem;font-weight:800;display:none;place-items:center;border:2px solid #fff}
+  .order-btn[data-q]:not([data-q="0"]) .badge{display:grid}
+  .ing{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+  /* Image fallback */
+  .imgfail{background:var(--silk)!important}
+  .imgfail::before{content:"श्री";position:absolute;inset:0;display:grid;place-items:center;color:var(--maroon);font-family:'Playfair Display',serif;font-size:1.8rem;z-index:1}
+
+  /* Heritage & Banner */
+  .heritage{background:var(--silk);border-top:1px solid rgba(197,155,39,.25);border-bottom:1px solid rgba(197,155,39,.25)}
+  .banner{background:linear-gradient(125deg,#5E1015 0%,#7E181F 55%,#560E13 100%);color:#FBF8F3;box-shadow:0 24px 50px -20px rgba(110,20,26,.55)}
+
+  /* Floating Cart Bar */
+  .cartbar{background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border:1.5px solid rgba(197,155,39,.55);box-shadow:0 20px 50px -15px rgba(35,23,21,.25)}
+  #cartWrap{transform:translateY(calc(100% + 28px));opacity:0;visibility:hidden;transition:transform .45s var(--ease),opacity .3s ease,visibility 0s linear .45s}
+  #cartWrap.show{transform:none;opacity:1;visibility:visible;transition:transform .45s var(--ease),opacity .3s ease,visibility 0s}
+  @keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
+  .bump{animation:bump .35s var(--ease)}
+
+  /* Sheet */
+  #sheet{visibility:hidden;transition:visibility 0s linear .4s}
+  #sheet.open{visibility:visible;transition:visibility 0s}
+  #sheet .scrim{opacity:0;transition:opacity .35s ease}
+  #sheet.open .scrim{opacity:1}
+  #sheet .panel{transform:translateY(100%);transition:transform .45s var(--ease)}
+  #sheet.open .panel{transform:none}
+  .field{width:100%;min-height:48px;padding:.75rem 1rem;border-radius:14px;background:var(--ivory);border:1px solid rgba(35,23,21,.16);color:var(--ink);font-size:16px;font-family:inherit;transition:border-color .2s,background-color .2s}
+  .field::placeholder{color:var(--muted)}
+  .field:focus{outline:none;border-color:var(--maroon);background:#fff}
+  .seg{display:grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:999px;background:var(--silk);border:1px solid rgba(197,155,39,.3)}
+  .seg button{min-height:42px;border-radius:999px;font-weight:700;font-size:.88rem;color:var(--muted);transition:background-color .25s,color .25s}
+  .seg button[aria-checked="true"]{background:var(--maroon);color:#fff}
+  .mini-step{display:inline-flex;align-items:center;border-radius:999px;border:1px solid rgba(110,20,26,.3);background:var(--ivory)}
+  .mini-step button{width:38px;height:38px;display:grid;place-items:center;font-size:1.15rem;color:var(--maroon);border-radius:999px}
+  .mini-step span{min-width:1.4rem;text-align:center;font-weight:700;font-size:.9rem}
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;transition-duration:.001ms!important}
+    .rise{opacity:1}
+  }
 </style>
 </head>
 
-<body class="overflow-x-hidden">
+<body class="bg-ivory text-ink font-sans antialiased">
 
-<!-- HEADER -->
-<header class="fixed top-0 left-0 w-full z-50 glass border-b border-white/10">
- <div class="max-w-7xl mx-auto px-5 md:px-10 h-20 flex items-center justify-between">
-  <a href="#" class="leading-tight">
-   <div class="serif text-2xl md:text-3xl font-bold gold-text">Shree Mithai</div>
-   <div class="text-[9px] tracking-[4px] uppercase text-cream/60">& Rasoi · Sendhwa</div>
-  </a>
+<!-- Icon Sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.6l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.4 6.1 20.7l1.3-6.6L2.5 9.5l6.6-.8z"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zM9 8V6.5a3 3 0 0 1 6 0V8"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3.5l1.7 4.3-2.2 1.4a11 11 0 0 0 5.3 5.3l1.4-2.2L19 14.5V18a2 2 0 0 1-2 2A13 13 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path fill="currentColor" d="M9.2 7.9c-.3 0-.7.2-.9.6-.5 1-.1 2.5 1.2 4.1 1.4 1.7 3 2.5 4.2 2.5.6 0 1.2-.3 1.4-.9l.1-.6-1.6-.9-.8.7c-.7-.2-1.7-1.1-2.2-1.9l.6-.8-.8-1.8-.6-.1z"/></symbol>
+    <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M6 15l6-6 6 6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 8h16M4 16h16"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></g></symbol>
+    <symbol id="i-veg" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="3" fill="none" stroke="#1E8E3E" stroke-width="2"/><circle cx="12" cy="12" r="4.4" fill="#1E8E3E"/></symbol>
+  </defs>
+</svg>
 
-  <nav class="hidden md:flex gap-9 text-xs tracking-widest uppercase text-cream/75">
-   <a href="#home" class="hover:text-gold">Home</a>
-   <a href="#signature" class="hover:text-gold">Our Specials</a>
-   <a href="#menu" class="hover:text-gold">Menu</a>
-   <a href="#heritage" class="hover:text-gold">Our Story</a>
-  </nav>
+<a href="#menu" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-maroon focus:text-white focus:px-4 focus:py-3 focus:rounded-full font-semibold">Skip to menu</a>
+<div id="live" class="sr-only" aria-live="polite"></div>
 
-  <a href="#menu" class="bg-maroon hover:bg-crimson border border-gold/30 px-5 py-3 rounded-full text-[10px] tracking-widest uppercase font-bold transition">
-   Order Now ↗
-  </a>
- </div>
+<!-- ============ HEADER ============ -->
+<header class="site-header glass sticky top-0 z-40">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+    <a href="#home" class="flex items-center gap-3 min-h-[44px]" aria-label="Shree Mithai and Rasoi, home">
+      <span class="mark" aria-hidden="true">श्री</span>
+      <span class="leading-none">
+        <span class="block font-serif text-[1.35rem] font-bold text-ink tracking-tight">Shree</span>
+        <span class="block text-[.68rem] font-bold text-maroon mt-0.5 tracking-wider uppercase">Mithai &amp; Rasoi</span>
+      </span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-1" aria-label="Primary">
+      <a href="#signature" data-nav="signature" class="navlink px-4 min-h-[44px] inline-flex items-center text-sm font-semibold text-muted hover:text-maroon transition-colors">Signatures</a>
+      <a href="#menu" data-nav="menu" class="navlink px-4 min-h-[44px] inline-flex items-center text-sm font-semibold text-muted hover:text-maroon transition-colors">Menu</a>
+      <a href="#heritage" data-nav="heritage" class="navlink px-4 min-h-[44px] inline-flex items-center text-sm font-semibold text-muted hover:text-maroon transition-colors">Our Story</a>
+      <a href="#visit" data-nav="visit" class="navlink px-4 min-h-[44px] inline-flex items-center text-sm font-semibold text-muted hover:text-maroon transition-colors">Visit &amp; Contact</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a href="tel:+917247448775" class="hidden sm:inline-flex min-h-[42px] items-center gap-1.5 px-3.5 rounded-full border border-maroon/20 text-xs font-bold text-maroon hover:bg-silk transition-colors">
+        <svg class="h-3.5 w-3.5"><use href="#i-phone"/></svg>72474 48775
+      </a>
+      <a href="#menu" class="btn btn-maroon !min-h-[42px] !px-5 !text-sm">Order Now</a>
+      <button id="navToggle" type="button" class="md:hidden h-11 w-11 grid place-items-center rounded-full border border-maroon/20 text-ink" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <svg class="h-5 w-5"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileNav" class="md:hidden border-t border-gold/25 bg-ivory" hidden>
+    <div class="px-4 py-3 grid gap-1">
+      <a href="#signature" class="mnav min-h-[46px] flex items-center font-serif text-xl font-bold text-ink">Signature Creations</a>
+      <a href="#menu" class="mnav min-h-[46px] flex items-center font-serif text-xl font-bold text-ink">Full Menu</a>
+      <a href="#heritage" class="mnav min-h-[46px] flex items-center font-serif text-xl font-bold text-ink">Our Heritage</a>
+      <a href="#visit" class="mnav min-h-[46px] flex items-center font-serif text-xl font-bold text-ink">Visit &amp; Contact</a>
+      <div class="pt-2 mt-1 border-t border-gold/20 flex flex-wrap gap-2">
+        <a id="waMobileNav" href="#" target="_blank" rel="noopener" class="btn btn-wa !min-h-[44px] !text-xs flex-1"><svg class="h-4 w-4"><use href="#i-wa"/></svg>WhatsApp Order</a>
+        <a href="https://instagram.com/vinayak_k.42" target="_blank" rel="noopener" class="btn btn-insta !min-h-[44px] !text-xs flex-1"><svg class="h-4 w-4"><use href="#i-insta"/></svg>@vinayak_k.42</a>
+      </div>
+    </div>
+  </div>
 </header>
 
-<!-- HERO -->
-<section id="home" class="relative min-h-[720px] md:min-h-[790px] flex items-center pt-24 overflow-hidden">
- <div class="absolute inset-0">
-  <img src="https://images.unsplash.com/photo-1605197161470-5d2f4c5f4f9c?w=1200&q=85"
-   onerror="this.src='https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&q=85'"
-   class="w-full h-full object-cover opacity-65" alt="Indian sweets and delicacies">
-  <div class="absolute inset-0 hero-overlay"></div>
-  <div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/20"></div>
- </div>
+<main>
+<!-- ============ HERO ============ -->
+<section id="home" class="hero-bg relative overflow-hidden">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 pt-8 pb-14 lg:pt-14 lg:pb-20 grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
 
- <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">
-  <div class="max-w-2xl">
-   <div class="flex items-center gap-3 mb-7">
-    <span class="gold-line w-12"></span>
-    <span class="text-gold uppercase tracking-[4px] text-[10px]">A Taste of Royal India</span>
-   </div>
+    <div class="lg:col-span-7">
+      <div class="rise inline-flex items-center gap-2 rounded-full border border-gold/40 bg-white px-3.5 py-1.5 shadow-sm" style="--d:.05s">
+        <span class="flex text-gold" aria-hidden="true">
+          <svg class="h-3.5 w-3.5"><use href="#i-star"/></svg><svg class="h-3.5 w-3.5"><use href="#i-star"/></svg><svg class="h-3.5 w-3.5"><use href="#i-star"/></svg><svg class="h-3.5 w-3.5"><use href="#i-star"/></svg><svg class="h-3.5 w-3.5"><use href="#i-star"/></svg>
+        </span>
+        <span class="text-xs font-bold text-ink">4.9 Rating</span>
+        <span class="text-xs text-muted">• Pure Desi Ghee Mithai, Sendhwa</span>
+      </div>
 
-   <h1 class="serif text-6xl sm:text-7xl md:text-8xl leading-[.91] font-semibold mb-7">
-    The Original Taste of
-    <span class="gold-text italic">Royal Tradition.</span>
-   </h1>
+      <h1 class="display font-serif text-ink mt-5">
+        <span class="rise block" style="--d:.12s">The Original Taste of</span>
+        <span class="rise block italic text-maroon mt-1" style="--d:.2s">Royal Tradition</span>
+      </h1>
 
-   <p class="text-cream/70 text-sm md:text-base leading-8 max-w-md mb-8">
-    From the first bite of our handcrafted mithai to the warmth of a freshly prepared meal, discover flavours made with love and heritage.
-   </p>
+      <p class="rise mt-5 max-w-[35rem] text-[1rem] leading-relaxed text-muted" style="--d:.3s">
+        Kesar jalebi lifted hot from pure desi ghee, mawa bati soaked in saffron chashni, and fresh chaat made every morning in Sendhwa.
+      </p>
 
-   <div class="flex items-center gap-3 mb-9">
-    <span class="text-gold text-lg">★★★★★</span>
-    <span class="font-bold text-sm">4.9/5</span>
-    <span class="text-cream/50 text-xs">A tradition worth celebrating</span>
-   </div>
+      <!-- Direct Order & Contact Box -->
+      <div class="rise order-callout mt-6 p-4 sm:p-5 max-w-[36rem]" style="--d:.38s">
+        <p class="text-xs sm:text-sm font-semibold text-maroon leading-snug">
+          ✨ Freshly packed on order — Direct WhatsApp ya Instagram par apna order bhejein, ya seedha call karein!
+        </p>
+        <div class="mt-3.5 flex flex-wrap gap-2.5">
+          <a id="waHero" href="#" target="_blank" rel="noopener" class="btn btn-wa flex-1 sm:flex-none !px-5">
+            <svg class="h-5 w-5"><use href="#i-wa"/></svg>Order on WhatsApp
+          </a>
+          <a href="https://instagram.com/vinayak_k.42" target="_blank" rel="noopener" class="btn btn-insta flex-1 sm:flex-none !px-5">
+            <svg class="h-5 w-5"><use href="#i-insta"/></svg>Instagram Order
+          </a>
+          <a href="tel:+917247448775" class="btn btn-outline w-full sm:w-auto !px-5">
+            <svg class="h-4 w-4 text-maroon"><use href="#i-phone"/></svg>Call 72474 48775
+          </a>
+        </div>
+      </div>
 
-   <div class="flex flex-wrap gap-4">
-    <a href="#menu" class="bg-maroon hover:bg-crimson px-8 py-4 text-xs tracking-widest uppercase font-bold transition">
-     Order Now →
-    </a>
-    <a href="#signature" class="border border-gold/60 hover:bg-gold hover:text-obsidian px-8 py-4 text-xs tracking-widest uppercase transition">
-     Explore Menu
-    </a>
-   </div>
+      <ul class="rise mt-6 flex flex-wrap gap-x-6 gap-y-2.5 text-xs sm:text-sm font-medium text-muted" style="--d:.46s">
+        <li class="flex items-center gap-2"><svg class="h-4 w-4 text-maroon"><use href="#i-clock"/></svg>Open daily, 7:00 AM – 10:30 PM</li>
+        <li class="flex items-center gap-2"><svg class="h-4 w-4"><use href="#i-veg"/></svg>100% Pure Vegetarian Kitchen</li>
+      </ul>
+    </div>
 
-   <div class="mt-14 flex items-center gap-4 text-[10px] uppercase tracking-[3px] text-cream/50">
-    <span class="gold-text">✦</span> Crafted Fresh in Sendhwa, Madhya Pradesh
-   </div>
+    <div class="lg:col-span-5 px-3">
+      <div class="arch-wrap">
+        <div class="arch">
+          <img alt="Golden kesar jalebi and traditional Indian mithai" width="560" height="700"
+               src="https://images.unsplash.com/photo-1760263215450-b13943da7e17?w=800&q=80&auto=format&fit=crop"
+               class="h-full w-full object-cover" fetchpriority="high" decoding="async">
+        </div>
+        <div class="chip rise absolute -left-2 sm:-left-6 bottom-6 px-4 py-3 max-w-[210px]" style="--d:.6s">
+          <p class="font-serif text-[1.1rem] font-bold text-ink leading-tight">Heritage Recipes</p>
+          <p class="text-xs text-muted mt-0.5">Serving Sendhwa since 1987</p>
+        </div>
+        <div class="chip rise absolute -right-2 sm:-right-5 top-10 px-3.5 py-2 flex items-center gap-2" style="--d:.7s">
+          <svg class="h-4 w-4"><use href="#i-veg"/></svg>
+          <span class="text-xs font-bold text-ink">100% Desi Ghee</span>
+        </div>
+      </div>
+    </div>
   </div>
- </div>
 </section>
 
-<!-- SIGNATURE -->
-<section id="signature" class="py-24 px-5 md:px-10 max-w-7xl mx-auto">
- <div class="text-center mb-14">
-  <p class="text-gold text-[10px] tracking-[5px] uppercase mb-4">Made with Love & Tradition</p>
-  <h2 class="serif text-5xl md:text-6xl">Signature <span class="gold-text italic">Creations</span></h2>
-  <p class="text-cream/50 text-xs mt-4">A little indulgence. A lasting memory.</p>
- </div>
-
- <div id="signatureGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+<!-- ============ SIGNATURE CREATIONS ============ -->
+<section id="signature" class="py-14 lg:py-20 bg-ivory border-t border-gold/20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 lg:mb-11">
+      <div>
+        <p class="kicker mb-1.5">Hot from this morning's kadhai</p>
+        <h2 class="h2 font-serif text-ink">Signature Creations</h2>
+      </div>
+      <p class="max-w-[22rem] text-sm leading-relaxed text-muted">Most loved specialties of Sendhwa. Add to cart and send your order directly on WhatsApp.</p>
+    </div>
+    <div id="sigGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5"></div>
+  </div>
 </section>
 
-<div class="gold-line max-w-6xl mx-auto"></div>
+<!-- ============ MENU ============ -->
+<section id="menu" class="py-14 lg:py-20 bg-ivory border-t border-gold/20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto">
+      <p class="kicker mb-1.5">Freshly Made Today</p>
+      <h2 class="h2 font-serif text-ink">Comfort in Every Bite</h2>
+      <p class="mt-3 text-sm sm:text-base leading-relaxed text-muted">Tap <strong>Order +</strong> on any item to build your box, then send your order on WhatsApp or Instagram.</p>
+    </div>
 
-<!-- MENU -->
-<section id="menu" class="py-24 px-5 md:px-10 max-w-7xl mx-auto">
- <div class="text-center mb-12">
-  <p class="text-gold text-[10px] tracking-[5px] uppercase mb-4">The Art of Good Food</p>
-  <h2 class="serif text-5xl md:text-6xl">Comfort in Every <span class="gold-text italic">Bite</span></h2>
-  <p class="text-cream/50 text-xs mt-4">Explore our collection of beloved Indian flavours.</p>
- </div>
+    <div class="mt-8 -mx-4 px-4 sm:mx-0 sm:px-0">
+      <div id="pills" role="group" aria-label="Filter menu by category" class="flex gap-2 overflow-x-auto no-scrollbar snap-x pb-1 sm:justify-center sm:flex-wrap"></div>
+    </div>
+    <p id="menuCount" class="mt-3.5 text-center text-xs font-medium text-muted" aria-live="polite"></p>
 
- <div id="categories" class="flex gap-3 overflow-x-auto pb-5 justify-start md:justify-center mb-10">
-  <button class="category active whitespace-nowrap border border-gold/30 rounded-full px-6 py-3 text-xs" data-category="All">All</button>
-  <button class="category whitespace-nowrap border border-gold/30 rounded-full px-6 py-3 text-xs" data-category="Signature Mithai">Signature Mithai</button>
-  <button class="category whitespace-nowrap border border-gold/30 rounded-full px-6 py-3 text-xs" data-category="Royal Chaats">Royal Chaats</button>
-  <button class="category whitespace-nowrap border border-gold/30 rounded-full px-6 py-3 text-xs" data-category="Kulhad Beverages">Kulhad Beverages</button>
-  <button class="category whitespace-nowrap border border-gold/30 rounded-full px-6 py-3 text-xs" data-category="Gift Boxes">Gift Boxes</button>
- </div>
-
- <div id="menuGrid" class="grid md:grid-cols-2 gap-x-12"></div>
+    <div id="menuGrid" class="mt-6 grid md:grid-cols-2 gap-3.5 lg:gap-4"></div>
+  </div>
 </section>
 
-<!-- HERITAGE STRIP -->
-<section id="heritage" class="relative py-24 px-6 overflow-hidden">
- <div class="absolute inset-0 bg-maroon/30"></div>
- <div class="absolute inset-0 opacity-20" style="background-image:radial-gradient(#D4AF37 1px,transparent 1px);background-size:22px 22px"></div>
-
- <div class="relative max-w-5xl mx-auto text-center">
-  <p class="text-gold uppercase tracking-[5px] text-[10px] mb-5">Our Promise to You</p>
-  <h2 class="serif text-5xl md:text-7xl leading-tight mb-6">
-   Freshly Crafted Every Morning.
-  </h2>
-  <p class="text-cream/75 text-sm md:text-base mb-9">
-   Pre-Order for Pickup & Delivery. Let something delicious find its way to you.
-  </p>
-
-  <div class="flex flex-wrap justify-center gap-4">
-   <a href="tel:+917247448775" class="bg-cream text-obsidian px-8 py-4 text-xs tracking-widest uppercase font-bold hover:bg-gold transition">
-    ☎ Call Us
-   </a>
-   <a href="https://wa.me/917247448775" target="_blank" rel="noopener" class="border border-gold text-cream px-8 py-4 text-xs tracking-widest uppercase hover:bg-maroon transition">
-    WhatsApp Us ↗
-   </a>
+<!-- ============ HERITAGE STRIP ============ -->
+<section id="heritage" class="heritage py-14 lg:py-20">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="lg:col-span-5 px-3">
+      <div class="arch-wrap" style="max-width:350px">
+        <div class="arch" style="aspect-ratio:1/1.1">
+          <img alt="Freshly prepared traditional Indian mithai" width="520" height="580" loading="lazy" decoding="async"
+               src="https://images.unsplash.com/photo-1760263217153-ef719ca2da19?w=700&q=80&auto=format&fit=crop"
+               class="h-full w-full object-cover">
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-7">
+      <p class="kicker mb-2">Our Heritage</p>
+      <h2 class="h2 font-serif text-ink">Pure Taste, Honest Ingredients Since 1987.</h2>
+      <p class="mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-muted">
+        Every batch of mawa is slow-cooked fresh each morning, using pure dairy ghee and hand-picked kesar. No shortcuts, no overnight leftovers—just authentic Sendhwa hospitality.
+      </p>
+      <ul class="mt-6 grid gap-3.5 max-w-xl">
+        <li class="flex items-start gap-3.5 bg-white p-4 rounded-2xl border border-gold/25">
+          <span class="mt-1.5 h-2.5 w-2.5 rotate-45 bg-maroon flex-none" aria-hidden="true"></span>
+          <p class="text-sm text-ink"><strong class="font-bold">Fresh Morning Batches:</strong> First kadhai starts at 4:00 AM so you get warm sweets every morning.</p>
+        </li>
+        <li class="flex items-start gap-3.5 bg-white p-4 rounded-2xl border border-gold/25">
+          <span class="mt-1.5 h-2.5 w-2.5 rotate-45 bg-maroon flex-none" aria-hidden="true"></span>
+          <p class="text-sm text-ink"><strong class="font-bold">100% Pure Desi Ghee:</strong> Zero vanaspati or artificial flavours—pure richness in every bite.</p>
+        </li>
+        <li class="flex items-start gap-3.5 bg-white p-4 rounded-2xl border border-gold/25">
+          <span class="mt-1.5 h-2.5 w-2.5 rotate-45 bg-maroon flex-none" aria-hidden="true"></span>
+          <p class="text-sm text-ink"><strong class="font-bold">Custom Celebration Boxes:</strong> Weddings, birthdays, festivals &amp; corporate gifting packed to order.</p>
+        </li>
+      </ul>
+    </div>
   </div>
- </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="bg-[#080706] pt-16 pb-28 px-6">
- <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
-  <div>
-   <h3 class="serif text-3xl gold-text">Shree Mithai & Rasoi</h3>
-   <p class="text-cream/40 text-xs mt-4 leading-7">
-    Bringing generations together through the timeless flavours of Indian sweets, snacks and hospitality.
-   </p>
+<!-- ============ DIRECT ORDER BANNER ============ -->
+<section id="order" class="bg-ivory px-4 sm:px-6 py-14 lg:py-20">
+  <div class="banner relative overflow-hidden mx-auto max-w-6xl rounded-[28px] px-6 py-10 sm:px-12 sm:py-12">
+    <div class="relative grid lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7">
+        <span class="inline-block px-3 py-1 rounded-full bg-white/15 text-goldlight text-xs font-bold tracking-wider uppercase mb-3">Quick Order &amp; Bulk Booking</span>
+        <h2 class="h2 font-serif text-white">Order Fresh Mithai &amp; Gift Boxes Today.</h2>
+        <p class="mt-3 max-w-lg text-sm sm:text-base leading-relaxed text-ivory/85">
+          Shaadi, birthday, shagun ya family function — apna order abhi WhatsApp ya Instagram DM par bhejein, ya seedha call par book karein!
+        </p>
+      </div>
+      <div class="lg:col-span-5 flex flex-col gap-3">
+        <a id="waBanner" href="#" target="_blank" rel="noopener" class="btn btn-wa w-full">
+          <svg class="h-5 w-5"><use href="#i-wa"/></svg>Order on WhatsApp (72474 48775)
+        </a>
+        <div class="grid grid-cols-2 gap-2.5">
+          <a href="https://instagram.com/vinayak_k.42" target="_blank" rel="noopener" class="btn bg-white text-maroon hover:bg-silk !px-3 !text-xs sm:!text-sm">
+            <svg class="h-4 w-4"><use href="#i-insta"/></svg>DM @vinayak_k.42
+          </a>
+          <a href="tel:+917247448775" class="btn bg-transparent border border-white/50 text-white hover:bg-white/10 !px-3 !text-xs sm:!text-sm">
+            <svg class="h-4 w-4"><use href="#i-phone"/></svg>Call Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ============ REVIEW & INQUIRY SECTION ============ -->
+<section class="bg-ivory px-4 sm:px-6 pb-14">
+  <div class="mx-auto max-w-6xl rounded-[24px] bg-white border border-gold/35 p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5 shadow-sm">
+    <div>
+      <p class="kicker mb-1">Feedback &amp; Queries</p>
+      <h3 class="font-serif text-2xl sm:text-3xl font-bold text-ink">Kuch Puchna Hai ya Review Dena Hai?</h3>
+      <p class="mt-1.5 text-sm text-muted">Bulk order, price, ya koi bhi sawaal ho toh seedha puchhein — aur humari mithai kaisi lagi, apna review zaroor dein!</p>
+    </div>
+    <div class="flex flex-wrap gap-3 w-full md:w-auto">
+      <a href="https://wa.me/917247448775?text=Namaste%20Shree%20Mithai%20%26%20Rasoi!%20Mujhe%20ek%20sawaal%20puchna%20hai%3A%20" target="_blank" rel="noopener" class="btn btn-wa flex-1 md:flex-none !px-5">
+        <svg class="h-5 w-5"><use href="#i-wa"/></svg>Kuch Puchhein
+      </a>
+      <a href="https://wa.me/917247448775?text=Namaste%20Shree%20Mithai%20%26%20Rasoi!%20Mera%20Review%20%E2%AD%90%E2%AD%90%E2%AD%90%E2%AD%90%E2%AD%90%3A%20" target="_blank" rel="noopener" class="btn btn-insta flex-1 md:flex-none !px-5">
+        <svg class="h-5 w-5 text-gold"><use href="#i-star"/></svg>Give a Review
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer id="visit" class="border-t border-gold/25 bg-silk pt-12 pb-32">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 grid gap-8 md:grid-cols-3">
+    <div>
+      <div class="flex items-center gap-3">
+        <span class="mark" aria-hidden="true">श्री</span>
+        <span class="leading-none">
+          <span class="block font-serif text-[1.35rem] font-bold text-ink">Shree</span>
+          <span class="block text-[.68rem] font-bold text-maroon mt-0.5 tracking-wider uppercase">Mithai &amp; Rasoi</span>
+        </span>
+      </div>
+      <p class="mt-3.5 max-w-xs text-sm leading-relaxed text-muted">Pure desi ghee sweets, royal chaats &amp; kulhad chai. Serving Sendhwa with love since 1987.</p>
+      <div class="mt-4 flex items-center gap-2.5">
+        <a id="waFooter" href="#" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-gold/35 text-xs font-bold text-ink hover:border-maroon">
+          <svg class="h-4 w-4 text-[#199549]"><use href="#i-wa"/></svg>WhatsApp
+        </a>
+        <a href="https://instagram.com/vinayak_k.42" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white border border-gold/35 text-xs font-bold text-ink hover:border-maroon">
+          <svg class="h-4 w-4 text-maroon"><use href="#i-insta"/></svg>@vinayak_k.42
+        </a>
+      </div>
+    </div>
+
+    <div class="text-sm">
+      <div class="flex gap-3">
+        <svg class="h-5 w-5 mt-0.5 text-maroon flex-none"><use href="#i-pin"/></svg>
+        <div>
+          <p class="font-bold text-ink">Store Location</p>
+          <p class="mt-1 text-muted leading-relaxed">Main Bazaar, Sendhwa<br>Dist. Barwani, Madhya Pradesh 451666</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Sendhwa+Madhya+Pradesh" target="_blank" rel="noopener" class="inline-flex min-h-[40px] items-center text-maroon font-bold underline underline-offset-4">Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-sm">
+      <div class="flex gap-3">
+        <svg class="h-5 w-5 mt-0.5 text-maroon flex-none"><use href="#i-clock"/></svg>
+        <div>
+          <p class="font-bold text-ink">Store Timings &amp; Contact</p>
+          <p class="mt-1 text-muted">Daily: 7:00 AM to 10:30 PM</p>
+          <a href="tel:+917247448775" class="inline-flex min-h-[40px] items-center text-maroon font-bold text-base">+91 72474 48775</a>
+          <p class="text-xs text-muted">Instagram: <a href="https://instagram.com/vinayak_k.42" target="_blank" rel="noopener" class="font-semibold text-ink underline">@vinayak_k.42</a></p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div>
-   <h4 class="text-gold uppercase tracking-widest text-xs mb-5">Explore</h4>
-   <div class="flex flex-col gap-3 text-xs text-cream/50">
-    <a href="#home" class="hover:text-gold">Home</a>
-    <a href="#signature" class="hover:text-gold">Our Specials</a>
-    <a href="#menu" class="hover:text-gold">Food Menu</a>
-   </div>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 mt-10 pt-6 border-t border-gold/25 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted">
+    <p>&copy; 2026 Shree Mithai &amp; Rasoi, Sendhwa (M.P.). All rights reserved.</p>
+    <p>Website crafted by <a href="https://vinayakkhonde.github.io/vinayak-portfolio/" target="_blank" rel="noopener" class="font-bold text-maroon hover:underline">Vinayak Khonde</a></p>
   </div>
-
-  <div>
-   <h4 class="text-gold uppercase tracking-widest text-xs mb-5">Visit & Connect</h4>
-   <p class="text-xs text-cream/50 leading-7">Sendhwa, Madhya Pradesh, India</p>
-   <a href="tel:+917247448775" class="text-xs text-cream/70 hover:text-gold block mt-2">+91 72474 48775</a>
-   <a href="https://wa.me/917247448775" class="text-xs text-cream/70 hover:text-gold block mt-2">WhatsApp Ordering</a>
-  </div>
- </div>
-
- <div class="gold-line max-w-7xl mx-auto my-10"></div>
- <p class="text-center text-[10px] tracking-widest text-cream/30">© 2026 SHREE MITHAI & RASOI · MADE WITH TRADITION</p>
 </footer>
 
-<!-- FLOATING CART -->
-<div id="cartBar" class="fixed bottom-3 left-3 right-3 z-[60] glass border border-gold/40 rounded-2xl p-4 shadow-2xl">
- <div class="max-w-5xl mx-auto flex items-center justify-between gap-3">
-  <div class="min-w-0">
-   <p class="text-[10px] text-gold uppercase tracking-widest">Your Selection</p>
-   <p class="text-sm font-bold mt-1"><span id="cartCount">0</span> Items <span class="text-cream/40 mx-1">·</span> ₹<span id="cartTotal">0</span></p>
+<!-- ============ FLOATING CART BAR ============ -->
+<div id="cartWrap" class="fixed inset-x-0 bottom-0 z-50 px-3 sm:px-4 pointer-events-none" style="padding-bottom:max(.75rem,env(safe-area-inset-bottom))" inert>
+  <div class="cartbar pointer-events-auto mx-auto max-w-[640px] rounded-[24px] p-2 pl-3.5 flex items-center gap-2">
+    <button id="cartOpen" type="button" class="flex items-center gap-3 flex-1 min-w-0 min-h-[50px] text-left rounded-2xl" aria-haspopup="dialog" aria-label="Review your order">
+      <span class="relative flex-none grid place-items-center h-11 w-11 rounded-full bg-silk border border-gold/40 text-maroon">
+        <svg class="h-5 w-5"><use href="#i-bag"/></svg>
+        <span id="cartBadge" class="absolute -top-1.5 -right-1.5 min-w-[21px] h-[21px] px-1 rounded-full bg-maroon text-white text-[11px] font-bold grid place-items-center border-2 border-white">0</span>
+      </span>
+      <span class="min-w-0 leading-tight">
+        <span id="cartCount" class="block text-xs font-medium text-muted">0 items</span>
+        <span id="cartTotal" class="block text-[1.15rem] font-extrabold text-ink tabular-nums">₹0</span>
+      </span>
+      <svg class="h-4 w-4 text-muted flex-none"><use href="#i-chev"/></svg>
+    </button>
+    <a id="waBar" href="#" target="_blank" rel="noopener" class="btn btn-wa flex-none !px-4 sm:!px-6 !min-h-[50px] !text-[.86rem] sm:!text-[.92rem]">
+      <svg class="h-5 w-5 flex-none"><use href="#i-wa"/></svg>
+      <span class="sm:hidden">WhatsApp</span><span class="hidden sm:inline">Order on WhatsApp</span>
+    </a>
   </div>
-  <button onclick="checkout()" class="bg-[#167A45] hover:bg-[#116438] text-white rounded-xl px-5 py-4 text-xs font-bold whitespace-nowrap transition">
-   Order on WhatsApp ↗
-  </button>
- </div>
+</div>
+
+<!-- ============ ORDER REVIEW SHEET ============ -->
+<div id="sheet" class="fixed inset-0 z-[60]" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" inert>
+  <div class="scrim absolute inset-0 bg-black/50" data-close></div>
+  <div class="panel absolute bottom-0 inset-x-0 mx-auto max-w-[640px] max-h-[90vh] overflow-y-auto rounded-t-[28px] bg-white border-t border-gold/40 px-5 pt-3 pb-6 shadow-2xl" style="padding-bottom:max(1.5rem,env(safe-area-inset-bottom))">
+    <div class="mx-auto h-1.5 w-10 rounded-full bg-silk mb-3" aria-hidden="true"></div>
+    <div class="flex items-center justify-between">
+      <h2 id="sheetTitle" class="font-serif text-[1.75rem] font-bold text-ink">Your Order Box</h2>
+      <button type="button" id="sheetClose" class="h-10 w-10 grid place-items-center rounded-full border border-ink/15 text-ink" aria-label="Close order">
+        <svg class="h-5 w-5"><use href="#i-close"/></svg>
+      </button>
+    </div>
+
+    <ul id="sheetList" class="mt-2"></ul>
+
+    <div class="mt-5">
+      <p class="text-xs font-bold uppercase tracking-wider text-muted mb-2" id="modeLabel">Order Type</p>
+      <div class="seg" role="radiogroup" aria-labelledby="modeLabel">
+        <button type="button" role="radio" aria-checked="true" data-mode="Pickup">Store Pickup</button>
+        <button type="button" role="radio" aria-checked="false" data-mode="Delivery">Home Delivery</button>
+      </div>
+    </div>
+
+    <div class="mt-4 grid gap-3">
+      <input id="fName" class="field" type="text" autocomplete="name" placeholder="Your full name" aria-label="Your name" maxlength="60">
+      <textarea id="fAddr" class="field" rows="2" placeholder="Delivery address in Sendhwa (with landmark)" aria-label="Delivery address" maxlength="200" hidden></textarea>
+      <input id="fNote" class="field" type="text" placeholder="Special note (e.g. gift packing, pickup at 6 PM)" aria-label="Note for the kitchen" maxlength="140">
+    </div>
+
+    <div class="mt-5 flex items-end justify-between border-t border-gold/25 pt-4">
+      <span class="text-sm font-medium text-muted">Estimated Total</span>
+      <span id="sheetTotal" class="text-[1.55rem] font-extrabold text-ink tabular-nums">₹0</span>
+    </div>
+
+    <div class="mt-4 grid sm:grid-cols-2 gap-2.5">
+      <a id="waSheet" href="#" target="_blank" rel="noopener" class="btn btn-wa w-full">
+        <svg class="h-5 w-5"><use href="#i-wa"/></svg>Send on WhatsApp
+      </a>
+      <a href="https://instagram.com/vinayak_k.42" target="_blank" rel="noopener" class="btn btn-insta w-full">
+        <svg class="h-5 w-5"><use href="#i-insta"/></svg>DM on Instagram
+      </a>
+    </div>
+    <p class="mt-3 text-center text-xs text-muted">Direct order confirmation on WhatsApp (72474 48775) or Instagram (@vinayak_k.42).</p>
+  </div>
 </div>
 
 <script>
-const PHONE = "917247448775";
+(function () {
+  'use strict';
 
-const products = [
- {
-  id:1,name:"Royal Kaju Katli",category:"Signature Mithai",price:450,
-  desc:"Silky cashew perfection with a delicate touch of silver.",
-  image:"https://images.unsplash.com/photo-1601303516534-8e7c9b4c5b85?w=500&q=80"
- },
- {
-  id:2,name:"Desi Ghee Motichoor Ladoo",category:"Signature Mithai",price:320,
-  desc:"Golden pearls of sweetness, rich in pure desi ghee.",
-  image:"https://images.unsplash.com/photo-1605197161470-5d2f4c5f4f9c?w=500&q=80"
- },
- {
-  id:3,name:"Royal Rasmalai",category:"Signature Mithai",price:180,
-  desc:"Soft cottage cheese dumplings in fragrant saffron milk.",
-  image:"https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=500&q=80"
- },
- {
-  id:4,name:"Festive Sweet Box",category:"Gift Boxes",price:799,
-  desc:"A beautiful assortment for your special celebrations.",
-  image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&q=80"
- },
- {
-  id:5,name:"Raj Kachori",category:"Royal Chaats",price:120,
-  desc:"Crispy, colourful and filled with tangy goodness.",
-  image:"https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=500&q=80"
- },
- {
-  id:6,name:"Dahi Puri",category:"Royal Chaats",price:90,
-  desc:"Crisp puris with creamy yoghurt and chutneys.",
-  image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500&q=80"
- },
- {
-  id:7,name:"Masala Kulhad Chai",category:"Kulhad Beverages",price:35,
-  desc:"Slow-brewed tea with warming Indian spices.",
-  image:"https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=500&q=80"
- },
- {
-  id:8,name:"Kesar Badam Milk",category:"Kulhad Beverages",price:80,
-  desc:"A comforting blend of saffron, almonds and milk.",
-  image:"https://images.unsplash.com/photo-1550583724-b2692b85b150?w=500&q=80"
- }
-];
+  var WA_NUMBER = '917247448775';
+  var BRAND = 'Shree Mithai & Rasoi';
+  var STORE_KEY = 'smr_cart_v2';
+  var MAX_QTY = 25;
+  var UNSPLASH = 'https://images.unsplash.com/';
+  function photo(id, w) { return UNSPLASH + id + '?w=' + (w || 500) + '&q=80&auto=format&fit=crop'; }
 
-const signatureIds = [1,2,3,5];
-const cart = {};
+  var CATS = [
+    { key: 'all',    label: 'All Items' },
+    { key: 'mithai', label: 'Signature Mithai' },
+    { key: 'chaat',  label: 'Royal Chaats' },
+    { key: 'bev',    label: 'Kulhad Beverages' },
+    { key: 'gift',   label: 'Gift Boxes' }
+  ];
 
-function money(value) {
- return Number(value).toLocaleString("en-IN");
-}
+  var ITEMS = [
+    { id: 'jalebi', cat: 'mithai', sig: true, name: 'Kesar Jalebi with Rabri', unit: 'per plate', price: 140,
+      poem: 'Hot from pure desi ghee, soaked in saffron syrup with chilled rabri.',
+      ing: 'Desi ghee, kesar, sugar syrup, slow-simmered rabri, pista', img: 'photo-1778448806852-db6a837fa98f' },
+    { id: 'bati', cat: 'mithai', sig: true, name: 'Kesar Mawa Bati', unit: '2 pieces', price: 120,
+      poem: 'Rich saffron-stuffed khoya bati dipped in warm cardamom chashni.',
+      ing: 'Fresh khoya, kesar, pista, elaichi, warm chashni', img: 'photo-1593701461250-d7b22dfd3a77' },
+    { id: 'peda', cat: 'mithai', name: 'Pista Mawa Peda', unit: '250 g', price: 280,
+      ing: 'Fresh mawa, pista, kesar, elaichi, pure desi ghee', img: 'photo-1769576918185-f4f57316d78a' },
+    { id: 'laddu', cat: 'mithai', name: 'Motichoor Laddu', unit: '250 g', price: 260,
+      ing: 'Fine besan boondi, desi ghee, magaz, kesar, elaichi', img: 'photo-1635952346904-95f2ccfcd029' },
 
-function getProduct(id) {
- return products.find(p => p.id === Number(id));
-}
+    { id: 'papdi', cat: 'chaat', sig: true, name: 'Dahi Papdi Chaat', unit: 'per plate', price: 90,
+      poem: 'Crisp papdi, chilled creamy dahi, sweet-tangy imli chutney & anaar.',
+      ing: 'Crispy papdi, chole, thick dahi, imli-saunth chutney, anaar, sev', img: 'photo-1788602563638-840d0d1d3ad2' },
+    { id: 'sevpuri', cat: 'chaat', name: 'Sev Puri', unit: '6 pieces', price: 70,
+      ing: 'Papdi, spiced aloo, hari chutney, imli chutney, nylon sev', img: 'photo-1788621138170-6854f17c9e2e' },
+    { id: 'golgappe', cat: 'chaat', name: 'Golgappe', unit: '8 pieces', price: 50,
+      ing: 'Crispy suji puri, tangy jaljeera pani, aloo-matar masala', img: 'photo-1781243680771-1fea4521e196' },
+    { id: 'samosa', cat: 'chaat', name: 'Samosa Chaat', unit: 'per plate', price: 80,
+      ing: 'Khasta Punjabi samosa, masala chole, dahi, chutneys, sev', img: 'photo-1601050690597-df0568f70950' },
 
-function quantity(id) {
- return cart[id] || 0;
-}
+    { id: 'chai', cat: 'bev', sig: true, name: 'Kulhad Elaichi Chai', unit: 'per kulhad', price: 30,
+      poem: 'Slow-brewed adrak-elaichi chai served piping hot in an earthen kulhad.',
+      ing: 'Assam tea leaf, full-cream milk, green elaichi, fresh ginger', img: 'photo-1761483281417-778013dc0177' },
+    { id: 'thandai', cat: 'bev', name: 'Gulab Thandai', unit: '300 ml', price: 90,
+      ing: 'Chilled milk, badam, saunf, rose petals, magaz, kesar', img: 'photo-1692620609860-be6717812f71' },
+    { id: 'lassi', cat: 'bev', name: 'Aam Malai Lassi', unit: '300 ml', price: 80,
+      ing: 'Thick churned dahi, Alphonso mango pulp, fresh malai, elaichi', img: 'photo-1794231818996-8352d26e3db1' },
+    { id: 'doodh', cat: 'bev', name: 'Kesar Masala Doodh', unit: 'per kulhad', price: 90,
+      ing: 'Full-cream simmered milk, kesar, badam, pista, jaiphal', img: 'photo-1636920272028-c27f1ae474c3' },
 
-function changeQty(id, amount) {
- id = Number(id);
- cart[id] = Math.max(0, quantity(id) + amount);
- if (cart[id] === 0) delete cart[id];
- render();
-}
+    { id: 'shagun', cat: 'gift', name: 'Shagun Mithai Box', unit: '500 g', price: 549,
+      ing: 'Assorted pista peda, kaju katli, motichoor laddu & mawa barfi', img: 'photo-1758910536889-43ce7b3199fd' },
+    { id: 'dryfruit', cat: 'gift', name: 'Royal Dry-Fruit Hamper', unit: '500 g', price: 1199,
+      ing: 'Premium kaju, badam, pista, anjeer & kishmish gift pack', img: 'photo-1543158181-1274e5362710' },
+    { id: 'tyohaar', cat: 'gift', name: 'Tyohaar Celebration Box', unit: '3-layer box', price: 899,
+      ing: 'Assorted desi ghee mithai, namkeen & roasted dry fruits', img: 'photo-1784286542139-b4904d8117b7' },
+    { id: 'ladootin', cat: 'gift', name: 'Laddu Trio Tin', unit: '600 g', price: 699,
+      ing: 'Motichoor, besan & boondi laddu in a festive keepsake tin', img: 'photo-1695568181440-aca4dac18650' }
+  ];
+  var BY_ID = {};
+  ITEMS.forEach(function (i) { BY_ID[i.id] = i; });
 
-function quantityControl(product) {
- const qty = quantity(product.id);
- if (!qty) {
-  return `<button onclick="changeQty(${product.id},1)" class="bg-maroon hover:bg-crimson px-5 py-2 rounded-full text-xs font-bold transition">+ Add</button>`;
- }
- return `
-  <div class="flex items-center gap-3 border border-gold/40 rounded-full px-3 py-1">
-   <button onclick="changeQty(${product.id},-1)" class="text-gold text-lg w-6">−</button>
-   <span class="text-sm font-bold">${qty}</span>
-   <button onclick="changeQty(${product.id},1)" class="text-gold text-lg w-6">+</button>
-  </div>`;
-}
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function inr(n) { return '₹' + Number(n).toLocaleString('en-IN'); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function waLink(text) { return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text); }
 
-function signatureCard(p) {
- return `
- <article class="food-card rounded-xl overflow-hidden bg-[#15110F]">
-  <div class="h-56 overflow-hidden relative">
-   <img src="${p.image}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover">
-   <div class="absolute top-3 left-3 bg-obsidian/80 text-gold text-[9px] tracking-widest px-3 py-2 uppercase">House Favourite</div>
-  </div>
-  <div class="p-5">
-   <p class="text-[9px] text-gold uppercase tracking-widest">${p.category}</p>
-   <h3 class="serif text-2xl mt-2">${p.name}</h3>
-   <p class="text-[11px] text-cream/50 leading-5 min-h-10 mt-2">${p.desc}</p>
-   <div class="flex items-center justify-between mt-5 gap-2">
-    <span class="font-bold text-sm">₹${money(p.price)}</span>
-    ${quantityControl(p)}
-   </div>
-  </div>
- </article>`;
-}
+  var cart = {};
+  var form = { mode: 'Pickup', name: '', addr: '', note: '' };
 
-function menuItem(p) {
- return `
- <article class="menu-row py-6 flex items-center justify-between gap-4">
-  <div class="min-w-0">
-   <h3 class="serif text-2xl">${p.name}</h3>
-   <p class="text-[10px] text-cream/45 mt-2 leading-5 max-w-sm">${p.desc}</p>
-   <p class="text-sm font-bold gold-text mt-3">₹${money(p.price)}</p>
-  </div>
-  <div class="shrink-0">${quantityControl(p)}</div>
- </article>`;
-}
+  function load() {
+    try {
+      var raw = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
+      if (raw && raw.cart) {
+        Object.keys(raw.cart).forEach(function (id) {
+          var q = parseInt(raw.cart[id], 10);
+          if (BY_ID[id] && q > 0) cart[id] = Math.min(q, MAX_QTY);
+        });
+      }
+      if (raw && raw.form) {
+        form.mode = raw.form.mode === 'Delivery' ? 'Delivery' : 'Pickup';
+        form.name = String(raw.form.name || '').slice(0, 60);
+        form.addr = String(raw.form.addr || '').slice(0, 200);
+        form.note = String(raw.form.note || '').slice(0, 140);
+      }
+    } catch (e) {}
+  }
+  function save() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify({ cart: cart, form: form })); } catch (e) {}
+  }
+  function qty(id) { return cart[id] || 0; }
+  function totals() {
+    var count = 0, sum = 0;
+    Object.keys(cart).forEach(function (id) { count += cart[id]; sum += cart[id] * BY_ID[id].price; });
+    return { count: count, sum: sum };
+  }
 
-let activeCategory = "All";
+  function ctlHTML(id) {
+    return '<div class="ctl" data-id="' + id + '" data-q="0">' +
+      '<button type="button" class="add-btn" data-act="add" aria-label="Add ' + esc(BY_ID[id].name) + ' to order">+ Add</button>' +
+      '<div class="stepper" role="group" aria-label="' + esc(BY_ID[id].name) + ' quantity">' +
+      '<button type="button" data-act="dec" aria-label="Remove one">&minus;</button>' +
+      '<span class="qty" aria-live="polite">1</span>' +
+      '<button type="button" data-act="inc" aria-label="Add one more">+</button>' +
+      '</div></div>';
+  }
 
-function renderMenu() {
- const filtered = activeCategory === "All"
-  ? products
-  : products.filter(p => p.category === activeCategory);
+  function renderSignature() {
+    $('#sigGrid').innerHTML = ITEMS.filter(function (i) { return i.sig; }).map(function (i) {
+      return '<article class="sig-card flex flex-col">' +
+        '<div class="arch"><img src="' + photo(i.img, 500) + '" alt="' + esc(i.name) + '" width="500" height="625" loading="lazy" decoding="async" class="h-full w-full object-cover"></div>' +
+        '<div class="flex flex-col flex-1 px-1 pt-3.5 pb-1">' +
+        '<h3 class="font-serif text-[1.25rem] sm:text-[1.4rem] leading-tight font-bold text-ink">' + esc(i.name) + '</h3>' +
+        '<p class="mt-1.5 text-xs leading-relaxed text-muted flex-1">' + esc(i.poem) + '</p>' +
+        '<div class="mt-3 flex items-baseline justify-between gap-2">' +
+        '<span class="text-base sm:text-lg font-extrabold text-maroon tabular-nums">' + inr(i.price) + '</span>' +
+        '<span class="text-[11px] font-medium text-muted">' + esc(i.unit) + '</span></div>' +
+        '<div class="mt-3">' + ctlHTML(i.id) + '</div>' +
+        '</div></article>';
+    }).join('');
+  }
 
- document.getElementById("menuGrid").innerHTML =
-  filtered.map(menuItem).join("");
-}
+  function renderMenu() {
+    $('#pills').innerHTML = CATS.map(function (c, idx) {
+      return '<button type="button" class="pill snap-start" data-cat="' + c.key + '" aria-pressed="' + (idx === 0) + '">' + c.label + '</button>';
+    }).join('');
 
-function render() {
- document.getElementById("signatureGrid").innerHTML =
-  signatureIds.map(id => signatureCard(getProduct(id))).join("");
+    $('#menuGrid').innerHTML = ITEMS.map(function (i) {
+      return '<article class="row" data-cat="' + i.cat + '" data-id="' + i.id + '">' +
+        '<div class="thumb"><img src="' + photo(i.img, 200) + '" alt="" width="66" height="66" loading="lazy" decoding="async" class="h-full w-full object-cover"></div>' +
+        '<div class="flex-1 min-w-0">' +
+        '<h3 class="font-serif text-[1.15rem] sm:text-[1.25rem] leading-tight font-bold text-ink">' + esc(i.name) + '</h3>' +
+        '<p class="text-[11px] font-bold text-maroon mt-0.5">' + esc(i.unit) + '</p>' +
+        '<p class="ing mt-1 text-xs leading-snug text-muted">' + esc(i.ing) + '</p>' +
+        '</div>' +
+        '<div class="flex-none flex flex-col items-end gap-2">' +
+        '<span class="text-base font-extrabold text-ink tabular-nums">' + inr(i.price) + '</span>' +
+        '<button type="button" class="order-btn" data-act="add" data-id="' + i.id + '" data-q="0" aria-label="Order ' + esc(i.name) + '">Order +<span class="badge" aria-hidden="true">0</span></button>' +
+        '</div></article>';
+    }).join('');
 
- renderMenu();
+    updateMenuCount('all');
+  }
 
- const count = Object.values(cart).reduce((a,b) => a+b,0);
- const total = Object.entries(cart).reduce((sum,[id,qty]) =>
-  sum + getProduct(id).price * qty,0);
+  function updateMenuCount(cat) {
+    var n = cat === 'all' ? ITEMS.length : ITEMS.filter(function (i) { return i.cat === cat; }).length;
+    $('#menuCount').textContent = 'Showing ' + n + ' fresh ' + (n === 1 ? 'item' : 'items');
+  }
 
- document.getElementById("cartCount").textContent = count;
- document.getElementById("cartTotal").textContent = money(total);
+  var filterTimer = null;
+  function applyFilter(cat) {
+    var rows = $$('#menuGrid .row');
+    clearTimeout(filterTimer);
+    rows.forEach(function (r) { r.classList.add('is-out'); });
+    filterTimer = setTimeout(function () {
+      rows.forEach(function (r) { r.hidden = !(cat === 'all' || r.dataset.cat === cat); });
+      updateMenuCount(cat);
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () { rows.forEach(function (r) { r.classList.remove('is-out'); }); });
+      });
+    }, 150);
+  }
 
- document.getElementById("cartBar").classList.toggle("visible",count > 0);
-}
+  var lastCount = 0;
+  function sync(announce) {
+    var t = totals();
+    $$('.ctl').forEach(function (el) {
+      var q = qty(el.dataset.id);
+      el.dataset.q = q;
+      $('.qty', el).textContent = q || 1;
+    });
+    $$('.order-btn').forEach(function (b) {
+      var q = qty(b.dataset.id);
+      b.dataset.q = q;
+      $('.badge', b).textContent = q;
+    });
 
-document.querySelectorAll(".category").forEach(button => {
- button.addEventListener("click",() => {
-  document.querySelectorAll(".category").forEach(b => b.classList.remove("active"));
-  button.classList.add("active");
-  activeCategory = button.dataset.category;
+    $('#cartBadge').textContent = t.count;
+    $('#cartCount').textContent = t.count + (t.count === 1 ? ' item selected' : ' items selected');
+    $('#cartTotal').textContent = inr(t.sum);
+    $('#sheetTotal').textContent = inr(t.sum);
+
+    var wrap = $('#cartWrap');
+    var show = t.count > 0;
+    wrap.classList.toggle('show', show);
+    wrap.inert = !show;
+
+    if (t.count !== lastCount && show) {
+      var b = $('#cartBadge');
+      b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump');
+    }
+    lastCount = t.count;
+
+    if (sheetOpen) {
+      if (!show) closeSheet(); else renderSheetList();
+    }
+    if (announce) $('#live').textContent = announce;
+  }
+
+  function setQty(id, q) {
+    if (!BY_ID[id]) return;
+    q = Math.max(0, Math.min(MAX_QTY, q));
+    if (q) cart[id] = q; else delete cart[id];
+    save();
+    sync('Updated cart');
+  }
+
+  var sheetOpen = false;
+  var lastFocus = null;
+
+  function renderSheetList() {
+    $('#sheetList').innerHTML = Object.keys(cart).map(function (id) {
+      var i = BY_ID[id], q = cart[id];
+      return '<li class="flex items-center gap-3 py-3 border-b border-ink/10" data-id="' + id + '">' +
+        '<span class="thumb !w-12 !h-12 !rounded-xl"><img src="' + photo(i.img, 120) + '" alt="" width="48" height="48" decoding="async" class="h-full w-full object-cover"></span>' +
+        '<span class="flex-1 min-w-0">' +
+        '<span class="block font-serif text-base font-bold text-ink leading-tight">' + esc(i.name) + '</span>' +
+        '<span class="block text-xs text-muted mt-0.5">' + esc(i.unit) + ' &middot; ' + inr(i.price) + ' each</span>' +
+        '</span>' +
+        '<span class="flex-none flex flex-col items-end gap-1">' +
+        '<span class="text-sm font-extrabold text-maroon tabular-nums">' + inr(i.price * q) + '</span>' +
+        '<span class="mini-step">' +
+        '<button type="button" data-act="dec" aria-label="Remove one">&minus;</button>' +
+        '<span>' + q + '</span>' +
+        '<button type="button" data-act="inc" aria-label="Add one more">+</button>' +
+        '</span></span></li>';
+    }).join('');
+  }
+
+  function openSheet() {
+    if (!totals().count) return;
+    lastFocus = document.activeElement;
+    renderSheetList();
+    syncFormUI();
+    var s = $('#sheet');
+    s.inert = false;
+    s.classList.add('open');
+    sheetOpen = true;
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function closeSheet() {
+    var s = $('#sheet');
+    s.classList.remove('open');
+    s.inert = true;
+    sheetOpen = false;
+    document.documentElement.style.overflow = '';
+    if (lastFocus) try { lastFocus.focus(); } catch (e) {}
+  }
+
+  function syncFormUI() {
+    $$('#sheet .seg button').forEach(function (b) { b.setAttribute('aria-checked', String(b.dataset.mode === form.mode)); });
+    $('#fAddr').hidden = form.mode !== 'Delivery';
+    $('#fName').value = form.name;
+    $('#fAddr').value = form.addr;
+    $('#fNote').value = form.note;
+  }
+
+  function buildMessage() {
+    var ids = Object.keys(cart);
+    var t = totals();
+    var ref = 'SMR' + String(Date.now()).slice(-5);
+    var L = [
+      '*' + BRAND + ' — New Order (#' + ref + ')*',
+      '------------------------------'
+    ];
+    ids.forEach(function (id, n) {
+      var i = BY_ID[id], q = cart[id];
+      L.push((n + 1) + '. ' + i.name + ' (' + i.unit + ') — ' + q + ' x ' + inr(i.price) + ' = ' + inr(i.price * q));
+    });
+    L.push('------------------------------');
+    L.push('*Total Amount: ' + inr(t.sum) + '* (' + t.count + ' items)');
+    L.push('Order Type: ' + form.mode);
+    if (form.name.trim()) L.push('Name: ' + form.name.trim());
+    if (form.mode === 'Delivery' && form.addr.trim()) L.push('Address: ' + form.addr.trim());
+    if (form.note.trim()) L.push('Note: ' + form.note.trim());
+    L.push('');
+    L.push('Please confirm my order availability & ready time!');
+    return L.join('\n');
+  }
+
+  function bindWA(el) {
+    if (!el) return;
+    el.addEventListener('click', function (e) {
+      if (!totals().count) { e.preventDefault(); return; }
+      el.href = waLink(buildMessage());
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    var act = e.target.closest('[data-act]');
+    if (act) {
+      var host = act.closest('[data-id]');
+      if (!host) return;
+      var id = host.dataset.id;
+      var a = act.dataset.act;
+      if (a === 'add' || a === 'inc') setQty(id, qty(id) + 1);
+      else if (a === 'dec') setQty(id, qty(id) - 1);
+      return;
+    }
+    var pill = e.target.closest('.pill');
+    if (pill) {
+      $$('.pill').forEach(function (p) { p.setAttribute('aria-pressed', String(p === pill)); });
+      applyFilter(pill.dataset.cat);
+      return;
+    }
+    if (e.target.closest('[data-close]')) closeSheet();
+  });
+
+  $('#cartOpen').addEventListener('click', openSheet);
+  $('#sheetClose').addEventListener('click', closeSheet);
+
+  $$('#sheet .seg button').forEach(function (b) {
+    b.addEventListener('click', function () { form.mode = b.dataset.mode; syncFormUI(); save(); });
+  });
+  $('#fName').addEventListener('input', function (e) { form.name = e.target.value; save(); });
+  $('#fAddr').addEventListener('input', function (e) { form.addr = e.target.value; save(); });
+  $('#fNote').addEventListener('input', function (e) { form.note = e.target.value; save(); });
+
+  bindWA($('#waBar'));
+  bindWA($('#waSheet'));
+
+  var directOrderText = 'Namaste ' + BRAND + '! Mujhe fresh mithai / snacks order karna hai. Please menu details confirm karein.';
+  ['#waHero', '#waBanner', '#waFooter', '#waMobileNav'].forEach(function (sel) {
+    var el = $(sel);
+    if (el) el.href = waLink(directOrderText);
+  });
+
+  var navBtn = $('#navToggle'), mNav = $('#mobileNav');
+  navBtn.addEventListener('click', function () {
+    var open = mNav.hidden;
+    mNav.hidden = !open;
+    navBtn.setAttribute('aria-expanded', String(open));
+  });
+  $$('.mnav').forEach(function (a) {
+    a.addEventListener('click', function () {
+      mNav.hidden = true;
+      navBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  document.addEventListener('error', function (e) {
+    if (e.target && e.target.tagName === 'IMG') {
+      var box = e.target.parentElement;
+      if (box) box.classList.add('imgfail');
+      e.target.style.display = 'none';
+    }
+  }, true);
+
+  load();
+  renderSignature();
   renderMenu();
- });
-});
-
-function checkout() {
- const entries = Object.entries(cart);
- if (!entries.length) return;
-
- let total = 0;
- let receipt = "Namaste! I would like to place an order from Shree Mithai & Rasoi.\\n\\n";
- receipt += "MY ORDER\\n";
- receipt += "--------------------------\\n";
-
- entries.forEach(([id,qty]) => {
-  const p = getProduct(id);
-  const amount = p.price * qty;
-  total += amount;
-  receipt += `${p.name} x ${qty} = Rs. ${money(amount)}\\n`;
- });
-
- receipt += "--------------------------\\n";
- receipt += `Total: Rs. ${money(total)}\\n\\n`;
- receipt += "Please confirm availability and pickup/delivery details. Thank you!";
-
- const url = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(receipt);
- window.open(url,"_blank","noopener");
-}
-
-render();
+  sync();
+  syncFormUI();
+})();
 </script>
-
 </body>
 </html>
+
