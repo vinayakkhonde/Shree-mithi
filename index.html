@@ -230,7 +230,68 @@
     html{scroll-behavior:auto}
     *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;transition-duration:.001ms!important}
     .rise{opacity:1}
+  }  /* ===== NATIVE MOBILE APP MODE ===== */
+  @media (max-width: 767px) {
+    body { user-select: none; -webkit-user-select: none; }
+    input, textarea { user-select: text; -webkit-user-select: text; }
+
+    /* Clean App Top Bar */
+    header a[href^="tel:"],
+    header a[href="#menu"],
+    #navToggle { display: none !important; }
+    header .h-16 { height: 58px !important; }
+
+    /* Compact App Spacing + Single-Row Scroll Pills + Bigger Thumbnails */
+    section { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+    #pills { flex-wrap: nowrap !important; justify-content: flex-start !important; padding-bottom: 6px; }
+    .row { padding: 0.85rem !important; gap: 0.85rem !important; border-radius: 18px !important; }
+    .thumb { width: 80px !important; height: 80px !important; border-radius: 14px !important; }
+
+    /* Cart bar floats above Bottom Nav */
+    #cartWrap { bottom: 68px !important; }
+    footer { padding-bottom: 165px !important; }
   }
+
+  /* In-App Search Bar */
+  .app-search-wrap { max-width: 520px; margin: 16px auto 0; position: relative; }
+  .app-search {
+    width: 100%; height: 46px; padding: 0 16px 0 42px;
+    border-radius: 14px; background: #fff;
+    border: 1.5px solid rgba(197,155,39,.4);
+    font-size: 15px; color: var(--ink);
+    box-shadow: 0 6px 18px -10px rgba(35,23,21,.15);
+  }
+  .app-search:focus { outline: none; border-color: var(--maroon); }
+
+  /* Bottom Native App Bar */
+  #appBottomNav {
+    display: none;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 45;
+    background: rgba(255,255,255,.96);
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(197,155,39,.35);
+    padding: 6px 8px max(6px, env(safe-area-inset-bottom));
+    box-shadow: 0 -8px 24px -12px rgba(35,23,21,.18);
+  }
+  @media (max-width: 767px) {
+    #appBottomNav { display: grid; grid-template-columns: repeat(4, 1fr); }
+  }
+  .app-tab {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 2px; min-height: 50px; border-radius: 12px;
+    font-size: 11px; font-weight: 700; color: var(--muted);
+    position: relative; background: transparent; border: 0;
+  }
+  .app-tab.active { color: var(--maroon); background: var(--silk); }
+  .app-tab-badge {
+    position: absolute; top: 4px; right: calc(50% - 20px);
+    min-width: 18px; height: 18px; padding: 0 4px;
+    border-radius: 999px; background: var(--maroon); color: #fff;
+    font-size: 10px; font-weight: 800; display: none; place-items: center;
+    border: 1.5px solid #fff;
+  }
+  .app-tab-badge.has-items { display: grid; }
+
 </style>
 </head>
 
@@ -641,6 +702,22 @@
     </div>
   </div>
 </div>
+<!-- ============ MOBILE APP BOTTOM NAV BAR ============ -->
+<nav id="appBottomNav" aria-label="App navigation">
+  <a href="#home" class="app-tab active" data-tab="home">
+    <span style="font-size:18px;line-height:1">🏠</span><span>Home</span>
+  </a>
+  <a href="#menu" class="app-tab" data-tab="menu">
+    <span style="font-size:18px;line-height:1">🍽️</span><span>Menu</span>
+  </a>
+  <button type="button" id="appTabCart" class="app-tab" data-tab="cart">
+    <span style="font-size:18px;line-height:1">🛍️</span><span>My Box</span>
+    <span id="appTabBadge" class="app-tab-badge">0</span>
+  </button>
+  <a href="tel:+917247448775" class="app-tab" data-tab="call">
+    <span style="font-size:18px;line-height:1">📞</span><span>Call</span>
+  </a>
+</nav>
 
 <script>
 (function () {
@@ -1122,6 +1199,56 @@
     var b = $('#pwaInstallBtn');
     if (b) b.remove();
   });
+  /* ===== NATIVE APP FEATURES: SEARCH + BOTTOM NAV ===== */
+  (function initMobileAppUI() {
+    var pillsEl = $('#pills');
+    if (pillsEl && !$('#menuSearch')) {
+      var wrap = document.createElement('div');
+      wrap.className = 'app-search-wrap';
+      wrap.innerHTML = '<span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);opacity:.6">🔍</span>' +
+        '<input id="menuSearch" class="app-search" type="search" placeholder="Search Jalebi, Chaat, Chai, Gift Box...">';
+      pillsEl.parentElement.parentElement.insertBefore(wrap, pillsEl.parentElement);
+
+      $('#menuSearch').addEventListener('input', function (e) {
+        var q = e.target.value.trim().toLowerCase();
+        var shown = 0;
+        $$('#menuGrid .row').forEach(function (r) {
+          var match = !q || r.textContent.toLowerCase().indexOf(q) !== -1;
+          r.hidden = !match;
+          if (match) shown++;
+        });
+        $('#menuCount').textContent = q
+          ? 'Found ' + shown + ' matching ' + (shown === 1 ? 'item' : 'items')
+          : 'Showing ' + ITEMS.length + ' fresh items';
+      });
+    }
+
+    var cartTab = $('#appTabCart');
+    if (cartTab) {
+      cartTab.addEventListener('click', function () {
+        if (totals().count > 0) openSheet();
+        else location.hash = '#menu';
+      });
+    }
+    $$('#appBottomNav a.app-tab').forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        $$('#appBottomNav .app-tab').forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+      });
+    });
+
+    var badgeEl = $('#appTabBadge');
+    var cartBadgeEl = $('#cartBadge');
+    if (badgeEl && cartBadgeEl) {
+      var syncBadge = function () {
+        var n = parseInt(cartBadgeEl.textContent, 10) || 0;
+        badgeEl.textContent = n;
+        badgeEl.classList.toggle('has-items', n > 0);
+      };
+      syncBadge();
+      new MutationObserver(syncBadge).observe(cartBadgeEl, { childList: true, characterData: true, subtree: true });
+    }
+  })();
 
 })();
 </script>
