@@ -2,7 +2,8 @@
 <html lang="en-IN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+
 <title>Shree Mithai &amp; Rasoi | Heritage Sweets &amp; Cafe, Sendhwa</title>
 <meta name="description" content="Pure desi ghee mithai, royal chaats and kulhad chai, crafted fresh every morning in Sendhwa, M.P. Order directly on WhatsApp or Instagram.">
 <meta name="theme-color" content="#FBF8F3">
@@ -291,6 +292,15 @@
     border: 1.5px solid #fff;
   }
   .app-tab-badge.has-items { display: grid; }
+  /* ===== PROPER MOBILE APP SCALE (FIX ZOOM-OUT) ===== */
+  @media (max-width: 767px) {
+    html { font-size: 19px !important; }
+    .app-search-wrap { max-width: 100% !important; }
+    .app-search { height: 50px !important; font-size: 16px !important; }
+    .app-tab { min-height: 58px !important; font-size: 13px !important; }
+    .app-tab span:first-child { font-size: 22px !important; }
+    #cartWrap { bottom: 76px !important; }
+  }
 
 </style>
 </head>
